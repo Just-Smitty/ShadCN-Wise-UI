@@ -4,7 +4,64 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ==========================================================================
+   PRIMITIVES — raw colour values, not tied to any semantic role.
+   Use these to build semantic tokens (--primary, --background, etc.).
+   Grey scale carries a warm/olive undertone to complement the brand green.
+   ========================================================================== */
+:root {
+  /* Grey */
+  --grey-50:  #FFFFFF;
+  --grey-100: #ECEDE8;
+  --grey-200: #D7D8D2;
+  --grey-300: #B7B9B4;
+  --grey-500: #5A5E58;
+  --grey-800: #2F322D;
+  --grey-900: #0B0C0A;
+  --black-alpha: rgba(0, 0, 0, 0.15);
+
+  /* Green */
+  --green-50:  #F6F7F4;
+  --green-100: #D6F9CE;
+  --green-200: #C0F4B6;
+  --green-300: #ADEF9D;
+  --green-400: #9EE770;
+  --green-500: #81E143;
+  --green-600: #66CF21;
+  --green-900: #163300;
+
+  /* Danger */
+  --danger-100: #FFA8AE;
+  --danger-500: #CB2730;
+  --danger-600: #B7232C;
+  --danger-700: #A82127;
+}
+
 @theme inline {
+  /* Primitives — available as Tailwind utilities (e.g. bg-grey-100, text-green-400) */
+  --color-grey-50:  var(--grey-50);
+  --color-grey-100: var(--grey-100);
+  --color-grey-200: var(--grey-200);
+  --color-grey-300: var(--grey-300);
+  --color-grey-500: var(--grey-500);
+  --color-grey-800: var(--grey-800);
+  --color-grey-900: var(--grey-900);
+  --color-black-alpha: var(--black-alpha);
+
+  --color-green-50:  var(--green-50);
+  --color-green-100: var(--green-100);
+  --color-green-200: var(--green-200);
+  --color-green-300: var(--green-300);
+  --color-green-400: var(--green-400);
+  --color-green-500: var(--green-500);
+  --color-green-600: var(--green-600);
+  --color-green-900: var(--green-900);
+
+  --color-danger-100: var(--danger-100);
+  --color-danger-500: var(--danger-500);
+  --color-danger-600: var(--danger-600);
+  --color-danger-700: var(--danger-700);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -45,6 +102,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --radius-full: 9999px;
 }
 
 /* ==========================================================================
@@ -66,10 +124,10 @@
   --card-foreground: #252525;
   --popover: #ffffff;
   --popover-foreground: #252525;
-  --primary: #343434;
-  --primary-foreground: #fafafa;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #343434;
+  --primary: var(--green-400);
+  --primary-foreground: var(--green-900);
+  --secondary: var(--green-100);
+  --secondary-foreground: var(--green-900);
   --muted: #f5f5f5;
   --muted-foreground: #737373;
   --accent: #f5f5f5;
@@ -103,8 +161,8 @@
   --popover-foreground: #fafafa;
   --primary: #ebebeb;
   --primary-foreground: #252525;
-  --secondary: #454545;
-  --secondary-foreground: #fafafa;
+  --secondary: var(--green-900);
+  --secondary-foreground: var(--green-400);
   --muted: #454545;
   --muted-foreground: #a3a3a3;
   --accent: #454545;
