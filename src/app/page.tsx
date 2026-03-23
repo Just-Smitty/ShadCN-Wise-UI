@@ -6,13 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { ArrowUpCircle, PlusCircle, ChevronDown } from "lucide-react"
+import { ArrowUpCircle, PlusCircle } from "lucide-react"
 
 /**
  * DESIGNER NOTE: Wise-style dashboard — layout and structure only.
@@ -46,24 +40,15 @@ export default function Home() {
         <h2 className="text-sm font-medium text-muted-foreground">Total balance</h2>
         <p className="text-3xl font-bold tracking-tight">1.00 EUR</p>
         <div className="flex flex-wrap gap-2">
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button size="sm">
             Send
           </Button>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button size="sm" variant="secondary">
             Add money
           </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button size="sm" variant="outline" className="gap-1">
-                Request
-                <ChevronDown className="size-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem>Request from bank account</DropdownMenuItem>
-              <DropdownMenuItem>Request from card</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Button size="sm" variant="secondary">
+            Request
+          </Button>
         </div>
       </section>
 
